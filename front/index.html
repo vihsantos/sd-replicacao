@@ -49,6 +49,14 @@
 <script type="text/javascript">
     $( document ).ready(function() {
         console.log( "ready!" );
+        $.ajax({
+            crossDomain: true,
+            url: "http://127.0.0.1:8000", success: function(result){
+            var span = document.createElement('span')
+            span.title = result;
+            
+            $(".card__content").append(span);
+        }});
     });
 
 
